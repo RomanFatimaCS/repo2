@@ -317,9 +317,7 @@
     }
 
     /* ---------- 3.5: Toggle Status Function ---------- */
-    function toggleStatus(index) {
-      books[index].status = books[index].status === "Available" ? "Issued" : "Available";
-      renderTable();
+   
     }
 
     /* ---------- 3.6: Delete Book Function ---------- */
