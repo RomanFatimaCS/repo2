@@ -449,6 +449,11 @@
         list.innerHTML += card;
       });
     }
+        function deleteBook(index) {
+      ...
+    }
+        <!-- Members Section HTML -->   ← ye yahan nahi hona chahiye
+    <div class="members-section">
 
     /* ---------- 3.11: Add Member ---------- */
     function addMember() {
