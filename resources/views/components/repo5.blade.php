@@ -423,13 +423,7 @@
     }
 
     /* ---------- 3.9: Update Stats ---------- */
-    function updateStats() {
-      let avail = books.filter(b => b.status === "Available").length;
-      let issued = books.filter(b => b.status === "Issued").length;
-
-      document.getElementById("totalStat").innerText = books.length;
-      document.getElementById("availStat").innerText = avail;
-      document.getElementById("issueStat").innerText = issued;
+  
     }
 
     /* ---------- 3.10: Render Members ---------- */
