@@ -345,15 +345,7 @@
     </div>
 
     /* ---------- 3.7: Search Function ---------- */
-    function searchBook() {
-      let query = document.getElementById("search").value.toLowerCase();
-      let rows = document.querySelectorAll("#tableBody tr");
-
-      rows.forEach((row) => {
-        let text = row.innerText.toLowerCase();
-        row.style.display = text.includes(query) ? "" : "none";
-      });
-    }
+   
 
     /* ---------- 3.8: Update Stats Function ---------- */
     function updateStats() {
