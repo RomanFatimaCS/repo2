@@ -362,6 +362,12 @@
     console.log("Reg No: 2022-GWG-1076");
 
   </script>
+  /* ---------- Members Section ---------- */
+.members-section {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 2px dashed #bbdefb;
+}
   <!-- ============================================
        SECTION 3: JAVASCRIPT END
        ============================================ -->
