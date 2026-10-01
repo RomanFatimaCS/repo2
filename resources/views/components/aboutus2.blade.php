@@ -23,7 +23,7 @@
             </a>
         </div>
         <div class="ab2-feature-image">
-            <img src="{{ asset('assert/image9.jpg') }}" alt="Financial experts">
+           <img src="{{ asset('assets/image9.jpg') }}' alt="financial experts'>
         </div>
     </div>
 
