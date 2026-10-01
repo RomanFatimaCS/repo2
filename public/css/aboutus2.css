@@ -1,0 +1,268 @@
+/* ============================================
+   MAIN SECTION
+   ============================================ */
+.ab2-section {
+    padding: 6rem 2rem 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #faf7f0;
+    color: #2a1f14;
+    line-height: 1.6;
+}
+
+/* ---------- Heading ---------- */
+.ab2-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin-bottom: 5rem;
+    letter-spacing: -0.02em;
+    margin-top: 0;
+}
+
+.ab2-heading em {
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* ---------- Feature Card ---------- */
+.ab2-feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: #ede4d3;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    min-height: 320px;
+
+    box-shadow:
+        0 12px 30px -8px rgba(80, 50, 20, 0.12),
+        0 4px 12px -4px rgba(80, 50, 20, 0.06);
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.ab2-feature:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 25px 50px -12px rgba(80, 50, 20, 0.2),
+        0 12px 24px -8px rgba(80, 50, 20, 0.1);
+}
+
+.ab2-feature.reverse { direction: rtl; }
+.ab2-feature.reverse > * { direction: ltr; }
+
+/* ---------- Text ---------- */
+.ab2-feature-content {
+    padding: 3.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.ab2-feature-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.ab2-feature-text {
+    font-size: 1.05rem;
+    color: #4a3d2e;
+    line-height: 1.6;
+    max-width: 340px;
+    margin: 0;
+}
+
+/* ---------- Arrow ---------- */
+.ab2-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #1a1a1a;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 1.25rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.ab2-arrow:hover {
+    background: #d4af37;
+    transform: translateX(6px);
+}
+
+.ab2-arrow svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ============================================
+   🖼️ IMAGE SIDE — SHARP + 3D EFFECT
+   ============================================ */
+.ab2-feature-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+}
+
+.ab2-feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* ✅ SHARP — image ko crisp rakhta hai */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+
+    /* ✅ 3D depth — layered shadows */
+    filter:
+        contrast(1.05)
+        saturate(1.05)
+        brightness(1.02);
+
+    display: block;
+
+    transition:
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.5s ease;
+}
+
+/* ✅ 3D hover effect — image lifts and tilts */
+.ab2-feature:hover .ab2-feature-image img {
+    transform: scale(1.06) rotateY(2deg);
+    filter:
+        contrast(1.1)
+        saturate(1.1)
+        brightness(1.05);
+}
+
+/* ✅ Golden 3D glow behind image */
+.ab2-feature-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(212, 175, 55, 0.15) 0%,
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.ab2-feature:hover .ab2-feature-image::before {
+    opacity: 1;
+}
+
+/* ✅ Shine sweep on hover */
+.ab2-feature-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transition: left 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.ab2-feature:hover .ab2-feature-image::after {
+    left: 100%;
+}
+
+/* ============================================
+   ✅ SHARP + CRISP TEXT RENDERING
+   ============================================ */
+.ab2-section * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+    .ab2-heading {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .ab2-feature {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .ab2-feature.reverse {
+        direction: ltr;
+    }
+
+    .ab2-feature-content {
+        padding: 2.5rem 2rem;
+    }
+
+    .ab2-feature-image {
+        min-height: 280px;
+    }
+
+    .ab2-feature-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .ab2-section {
+        padding: 3rem 1.25rem;
+    }
+
+    .ab2-heading {
+        font-size: 1.85rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .ab2-feature-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .ab2-feature-title {
+        font-size: 1.4rem;
+    }
+
+    .ab2-feature-text {
+        font-size: 0.95rem;
+    }
+}
+
+/* Accessibility — motion reduce */
+@media (prefers-reduced-motion: reduce) {
+    .ab2-feature,
+    .ab2-feature-image img,
+    .ab2-feature-image::before,
+    .ab2-feature-image::after {
+        transition: none !important;
+        transform: none !important;
+    }
+}i
